@@ -1,0 +1,177 @@
+.App {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  color: #0072c6;
+  border-bottom: 1px solid #ccc;
+}
+
+header .logo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.content-inner {
+    padding: 20px;
+    column-gap: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar ul li.active {
+  background-color: #0072c6;
+  color: white;
+}
+
+/* main { */
+/*   flex: 1; */
+/*   padding: 20px; */
+/* } */
+
+.chat-interface {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 70%
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-message {
+  background: #e9e9e9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.chat-input {
+  display: flex;
+  margin-top: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.chat-input button {
+  padding: 10px;
+  background-color: #0072c6;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #005999;
+}
+
+.prompt-options {
+  flex: 1;
+  padding: 20px;
+}
+
+.prompt-options-side {
+  display: flex;
+  flex-direction: column;
+  width: 30%
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button.submit-button {
+  background-color: #0072c6;
+}
+
+button.submit-button:hover {
+  background-color: #005999;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-chat-interface {
+    display: flex;
+    flex-direction: row;
+}
