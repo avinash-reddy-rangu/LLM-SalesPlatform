@@ -7,7 +7,7 @@ Run_Instructions.txt
 /node_modules
 /.pnp
 .pnp.js
-.idea
+.idea/
 
 # testing
 /coverage
