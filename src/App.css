@@ -29,13 +29,6 @@ header h1 {
   flex: 1;
 }
 
-.content-inner {
-    padding: 20px;
-    column-gap: 20px;
-    display: flex;
-    width: 100%;
-}
-
 .sidebar {
   width: 200px;
   background-color: #f4f4f4;
@@ -58,16 +51,31 @@ header h1 {
   color: white;
 }
 
-/* main { */
-/*   flex: 1; */
-/*   padding: 20px; */
-/* } */
-
-.chat-interface {
+.main-content {
+  flex: 1;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 70%
+}
+
+.ai-assistant-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.chat-interface, .content-library, .prompt-options, .home {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-interface {
+  margin-right: 20px;
 }
 
 .chat-window {
@@ -111,67 +119,75 @@ header h1 {
   background-color: #005999;
 }
 
-.prompt-options {
-  flex: 1;
-  padding: 20px;
-}
-
-.prompt-options-side {
-  display: flex;
-  flex-direction: column;
-  width: 30%
-}
-
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-div {
+.prompt-options form div {
   margin-bottom: 10px;
 }
 
-label {
+.prompt-options form label {
+  display: block;
   margin-bottom: 5px;
-  font-weight: bold;
 }
 
-input, select, textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+.prompt-options form input, .prompt-options form textarea {
+  width: 95%;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-button {
+.prompt-options form button.submit-button {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #0072c6;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #45a049;
-}
-
-button.submit-button {
-  background-color: #0072c6;
-}
-
-button.submit-button:hover {
+.prompt-options form button.submit-button:hover {
   background-color: #005999;
 }
 
-.home {
-  display: flex;
-  flex-direction: column;
+.content-library input[type="file"] {
+  margin-bottom: 20px;
 }
 
-.ai-chat-interface {
-    display: flex;
-    flex-direction: row;
+.content-library ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content-library ul li {
+  padding: 10px;
+  background: #f4f4f4;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.content-library input[type="file"] {
+  margin-bottom: 20px;
+}
+
+.uploaded-files {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.file-icon {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.file-name {
+  flex: 1;
 }

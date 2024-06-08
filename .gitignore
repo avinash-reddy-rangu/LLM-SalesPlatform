@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+/llm-env
+backend/uploads/
+mongo/
+Run_Instructions.txt
 # dependencies
 /node_modules
 /.pnp
