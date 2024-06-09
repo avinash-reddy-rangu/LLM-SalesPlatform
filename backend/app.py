@@ -36,13 +36,14 @@ def save_file(file):
     file_data = {
         "file_id": file_id,
         "file_path": file_path,
-        "file_name": filename,
+        "file_name": str(filename),
         "created_timestamp": datetime.utcnow(),
         "is_deleted": False
     }
 
     file_collection.insert_one(file_data)
-
+    if '_id' in file_data:
+        del file_data['_id']
     return file_data
 
 

@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  const clients = [
+    { eci: '9494361913', name: 'Fenix M', value: 80, hasRecommendations: true, Recommendation_text: "Encourage client interest in our credit cards, highlighting the perks of convenience and personalized benefits.", Meeting_text: "Upcoming meeting tomorrow"},
+    { eci: '9701245732', name: 'Sonia R', value: 20, hasRecommendations: false, Recommendation_text: "",  Meeting_text: "Upcoming meeting in a week"},
+    { eci: '9867392991', name: 'John Doe', value: 75, hasRecommendations: true, Recommendation_text: "Recommend our mortgage options to client, focusing on competitive rates and flexible repayment plans. ",  Meeting_text: ""},
+  ];
+  const maxValue = 100;
   const [activeTab, setActiveTab] = useState("Home");
   const [role, setRole] = useState("");
   const [tone, setTone] = useState("");
@@ -91,7 +97,7 @@ function App() {
     <div className="App">
       <header>
         <img
-          src="/jpm-logo.png"
+          src="/jpmc-logo.png"
           alt="J.P. Morgan Chase Logo"
           className="logo"
         />
@@ -127,14 +133,50 @@ function App() {
             >
               Prompt Library
             </li>
+            <li
+              className={activeTab === "Recommendations" ? "active" : ""}
+              onClick={() => setActiveTab("Recommendations")}
+            >
+              Recommendations
+            </li>
+            <li
+              className={activeTab === "Meetings" ? "active" : ""}
+              onClick={() => setActiveTab("Meetings")}
+            >
+              Meetings
+            </li>
           </ul>
         </nav>
         <main className="main-content">
           {activeTab === "Home" && (
+            <div>
             <div className="home">
-              <h2>Login Details</h2>
-              <p>Banker Name: John Doe</p>
+              <h2>Welcome</h2>
+              <p>John Doe</p>
               <p>Position: Senior Banker</p>
+            </div>
+                <div className="App">
+        <div className="main-content">
+        <h2>Clients</h2>
+        <div className="card-container">
+          {clients.map((client, index) => (
+            <div key={index} className="card">
+              <h3>{client.name}</h3>
+              <p>ECI: {client.eci}</p>
+              <div
+                className={`value-bar ${client.value > 70 ? 'high-value' : 'low-value'}`}
+                style={{ width: `${client.value / maxValue * 100}%` }}
+              > <p> {client.value}% </p></div>
+              {client.hasRecommendations && (
+                <div className="recommendation-sign">
+                  🔔
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        </div>
+    </div>
             </div>
           )}
           {activeTab === "AI Assistant" && (
@@ -243,7 +285,7 @@ function App() {
           )}
           {activeTab === "Content Library" && (
             <div className="content-library">
-              <h2>Content Library</h2>
+              <h2>Documents</h2>
               <input type="file" multiple onChange={handleFileUpload} />
               <div className="uploaded-files">
                 <h2>Uploaded files</h2>
@@ -314,6 +356,42 @@ function App() {
                 </ul>
               </div>
             </div>
+          )}
+          {activeTab === "Recommendations" && (
+          <div>
+                  <div className="card-container">
+          {clients.map((client, index) => (
+            <div key={index} className="card">
+              <h3>{client.name}</h3>
+              <p>ECI: {client.eci}</p>
+              {client.hasRecommendations && (
+                <div className="recommendation-sign">
+                  <p><i> {client.Recommendation_text} </i></p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+          </div>
+          )}
+          {activeTab === "Meetings" && (
+          <div>
+         <div className="card-container">
+          {clients.map((client, index) => (
+            <div key={index} className="card">
+              <h3>{client.name}</h3>
+              <p>ECI: {client.eci}</p>
+              {client.hasRecommendations && (
+                <div className="recommendation-sign">
+                  <p><i> {client.Meeting_text}</i></p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+          <div>
+          </div>
+          </div>
           )}
         </main>
       </div>
