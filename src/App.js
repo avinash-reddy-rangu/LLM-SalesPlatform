@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+// import Calendar from './calendar';
 
 function App() {
   const clients = [
@@ -166,7 +167,7 @@ function App() {
               <div
                 className={`value-bar ${client.value > 70 ? 'high-value' : 'low-value'}`}
                 style={{ width: `${client.value / maxValue * 100}%` }}
-              > <p> {client.value}% </p></div>
+              > <p class="description"> {client.value}% </p></div>
               {client.hasRecommendations && (
                 <div className="recommendation-sign">
                   🔔
@@ -388,7 +389,9 @@ function App() {
               )}
             </div>
           ))}
-        </div>
+
+         </div>
+
           <div>
           </div>
           </div>

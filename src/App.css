@@ -218,11 +218,11 @@ header h1 {
 }
 
 .high-value {
-  background-color: rgba(0, 255, 0, 0.5);
+  background-color: rgba(80, 200, 120, 0.8);
 }
 
 .low-value {
-  background-color: rgba(255, 0, 0, 0.5);;
+  background-color: rgba(210, 4, 45, 0.8);;
 }
 
 .recommendation-sign {
@@ -233,4 +233,10 @@ header h1 {
 .thumbs-up-icon {
   width: 25px; /* Adjust the size of the icon as needed */
   height: 25px; /* Adjust the size of the icon as needed */
+}
+
+.description {
+  color: #fff;
+  font-weight: bold;
+  margin-left: 2px;
 }
